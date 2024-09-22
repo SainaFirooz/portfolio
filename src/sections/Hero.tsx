@@ -1,14 +1,20 @@
-import memojiImage from "@/assets/images/memoji-avatar-4.png";
+import me from "@/assets/images/me.png";
 import Image from "next/image";
 import ArrowDown from "@/assets/icons/arrow-down.svg";
 import grainImage from "@/assets/images/grain.jpg";
 import StarIcon from "@/assets/icons/star.svg";
 import { HeroOrbit } from "@/components/HeroOrbit";
 import SparkleIcon from "@/assets/icons/sparkle.svg";
+import GitHubIcon from "@/assets/icons/github.svg";
+import LinkedInIcon from "@/assets/icons/linkedin.svg";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
 
 export const HeroSection = () => {
   return (
-    <div className="py-32 md:py-48 lg:py-60 relative z-0 overflow-x-clip">
+    <div
+      id="home"
+      className="py-32 md:py-48 lg:py-60 relative z-0 overflow-x-clip"
+    >
       <div className="absolute inset-0 [mask-image:linear-gradient(to_bottom,transparent,black_10%,black_70%,transparent)]">
         <div
           className="absolute inset-0 -z-30 opacity-5"
@@ -99,11 +105,11 @@ export const HeroSection = () => {
         </HeroOrbit>
       </div>
 
-      <div className="container">
+      <div className="container relative z-10">
         <div className="flex flex-col items-center">
           <Image
-            src={memojiImage}
-            className="size-[100px]"
+            src={me}
+            className="size-[90px] rounded-full mb-3"
             alt="Me behind my computer"
           />
           <div className="bg-gray-950 border border-gray-800 px-4 py-1.5 inline-flex items-center gap-4 rounded-lg">
@@ -117,23 +123,31 @@ export const HeroSection = () => {
         </div>
         <div className="max-w-lg mx-auto">
           <h1 className="font-serif text-3xl md:text-5xl text-center mt-8 tracking-wide">
-            Building Exceptional User Experiences
+            Saina Firooz
           </h1>
           <p className="mt-4 text-center text-white/60 md:text-lg">
-            I specialize in transforming designs into functional,
-            high-performing we applications. Let&apos;s discuss your next
-            project.
+            Fullstack developer with a passion for creating beautiful and
+            functional web applications. Currently looking for an internship.
           </p>
         </div>
         <div className="flex flex-col md:flex-row justify-center items-center mt-8 gap-4">
-          <button className="inline-flex items-center gap-2 border border-white/15 px-6 h-12 rounded-xl">
-            <span className="font-semibold">Explore My Work</span>
-            <ArrowDown className="size-4" />
-          </button>
-          <button className="inline-flex items-center gap-2 border border-white bg-white text-gay-900 h-12 px-6 rounded-xl">
-            <span>👋</span>
-            <span className="font-semibold text-black">Let&apos;s Connect</span>
-          </button>
+          <a
+            href="https://github.com/SainaFirooz"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center "
+          >
+            <FaGithub className="w-11 h-11 text-white hover:text-gray-400 " />
+          </a>
+
+          <a
+            href="https://www.linkedin.com/in/saina-firooz"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center"
+          >
+            <FaLinkedin className="w-11 h-11 text-white hover:text-gray-400 " />
+          </a>
         </div>
       </div>
     </div>
