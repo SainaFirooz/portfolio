@@ -26,7 +26,7 @@ function ContactForm() {
                 Thanks for reaching out!
               </h3>
               <p className="text-white/70">
-                I'll get back to you as soon as possible.
+                I&apos;ll get back to you as soon as possible.
               </p>
             </div>
           ) : (
