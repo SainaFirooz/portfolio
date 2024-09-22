@@ -1,4 +1,4 @@
-import darkSaasLandingPage from "@/assets/images/dark-saas-landing-page.png";
+import cmsProject from "@/assets/images/cms-project.png";
 import lightSaasLandingPage from "@/assets/images/light-saas-landing-page.png";
 import aiStartupLandingPage from "@/assets/images/ai-startup-landing-page.png";
 import Image from "next/image";
@@ -7,54 +7,61 @@ import ArrowUpRightIcon from "@/assets/icons/arrow-up-right.svg";
 import grainImage from "@/assets/images/grain.jpg";
 import { SectionHeader } from "@/components/SectionHeader";
 import { Card } from "@/components/Card";
+import letterboxd from "@/assets/images/letterboxd.png";
+import cinephile from "@/assets/images/cinephile.png";
 
 const portfolioProjects = [
   {
-    company: "Acme Corp",
-    year: "2022",
-    title: "Dark Saas Landing Page",
+    company: "Letterboxd",
+    year: "2024",
+    title: "Chat App for Letterboxd",
     results: [
-      { title: "Enhanced user experience by 40%" },
-      { title: "Improved site speed by 50%" },
-      { title: "Increased mobile traffic by 35%" },
+      { title: "Socket.Io for real time chatting" },
+      { title: "Notification sound" },
+      { title: "MongoDb database" },
     ],
-    link: "https://youtu.be/4k7IdSLxh6w",
-    image: darkSaasLandingPage,
+    link: "https://github.com/SainaFirooz/letterboxd-chat",
+    image: letterboxd,
+    isLiveSite: false,
   },
   {
-    company: "Innovative Co",
-    year: "2021",
-    title: "Light Saas Landing Page",
+    company: "Ecommerce",
+    year: "2024",
+    title: "Storyblok/NextJS project",
     results: [
-      { title: "Boosted sales by 20%" },
-      { title: "Expanded customer reach by 35%" },
-      { title: "Increased brand awareness by 15%" },
+      { title: "Storyblok with reusable components" },
+      { title: "Multilevel menu" },
+      {
+        title: "Client side and server side rendering",
+      },
     ],
-    link: "https://youtu.be/7hi5zwO75yc",
-    image: lightSaasLandingPage,
+    link: "https://cms-gruppuppgift.vercel.app/",
+    image: cmsProject,
+    isLiveSite: true,
   },
   {
-    company: "Quantum Dynamics",
-    year: "2023",
-    title: "AI Startup Landing Page",
+    company: "TMDb API",
+    year: "2024",
+    title: "Movie site using TMDb API",
     results: [
-      { title: "Enhanced user experience by 40%" },
-      { title: "Improved site speed by 50%" },
-      { title: "Increased mobile traffic by 35%" },
+      { title: "TMDb API for the latest movies" },
+      { title: "PHP, SQL and MVC framework" },
+      { title: "Object-oriented programming" },
     ],
-    link: "https://youtu.be/Z7I5uSRHMHg",
-    image: aiStartupLandingPage,
+    link: "https://github.com/SainaFirooz/PHP-SQL-website",
+    image: cinephile,
+    isLiveSite: false,
   },
 ];
 
 export const ProjectsSection = () => {
   return (
-    <section className="pb-16 lg:py-24">
+    <section id="projects" className="pb-16 lg:py-24">
       <div className="container">
         <SectionHeader
-          eyebrow="Real-world Results"
+          eyebrow="My Fullstack Journey"
           title="Featured Projects"
-          description="See how i transformed concepts into engaging digital experiences."
+          description="Each project represents a step in my journey as a developer, blending creativity, technical skills, and problem-solving abilities."
         />
 
         <div className="mt-10 md:mt-20 flex flex-col  gap-20">
@@ -88,9 +95,17 @@ export const ProjectsSection = () => {
                       </li>
                     ))}
                   </ul>
-                  <a href={project.link}>
+                  <a
+                    href={project.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     <button className="bg-white text-gray-950 h-12 w-full md:w-auto px-6 rounded-xl font-semibold inline-flex items-center justify-center gap-2 mt-8">
-                      <span>Visit Live Site</span>
+                      <span>
+                        {project.isLiveSite
+                          ? "Visit Live Site"
+                          : "View on GitHub"}
+                      </span>
                       <ArrowUpRightIcon className="size-4" />
                     </button>
                   </a>
